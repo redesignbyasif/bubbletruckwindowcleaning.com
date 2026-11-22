@@ -13,7 +13,6 @@
   var mobileNav = document.getElementById("mobileNav");
   var floatingBar = document.getElementById("floatingBar");
   var toTop = document.getElementById("toTop");
-  var floatCta = document.getElementById("floatCta");
   var dropdowns = Array.prototype.slice.call(document.querySelectorAll(".has-dropdown"));
   var desktopQuery = window.matchMedia("(min-width: 1180px)");
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -36,7 +35,6 @@
     if (header) header.classList.toggle("is-scrolled", y > 12);
     if (floatingBar) floatingBar.classList.toggle("is-visible", y > 220);
     if (toTop) toTop.classList.toggle("is-visible", y > 700);
-    if (floatCta) floatCta.classList.toggle("is-visible", y > 900);
     lastY = y;
     ticking = false;
   }

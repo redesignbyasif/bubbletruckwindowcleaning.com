@@ -1310,34 +1310,6 @@ figure { margin: 0; }
 .to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .to-top:hover { background: var(--ink); color: var(--paper); }
 
-/* desktop-only floating estimate pill */
-.float-cta {
-  position: fixed;
-  right: var(--pad);
-  bottom: 86px;
-  z-index: 94;
-  display: none;
-  align-items: center;
-  gap: 8px;
-  padding: 13px 20px;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  box-shadow: 0 16px 34px -20px rgba(10, 24, 38, 0.9);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(12px);
-  transition: opacity 0.28s var(--ease), transform 0.28s var(--ease),
-              visibility 0.28s, background 0.2s var(--ease), color 0.2s var(--ease);
-}
-.float-cta .icon { width: 1.05em; height: 1.05em; }
-.float-cta:hover { background: var(--blue); color: #fff; }
-.float-cta.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
-
 /* keep footer clear of the floating bar on phones */
 body { padding-bottom: 0; }
 @media (max-width: 1023px) {
@@ -1487,7 +1459,6 @@ body { padding-bottom: 0; }
   /* desktop: hide mobile action bar, show floating button instead */
   .floating-bar { display: none; }
   .to-top { display: grid; bottom: 28px; }
-  .float-cta { display: inline-flex; }
 }
 
 @media (min-width: 1200px) {
