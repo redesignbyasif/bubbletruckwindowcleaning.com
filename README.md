@@ -108,13 +108,15 @@ All business facts, phone numbers, address, hours, service descriptions, service
 
 ## QA
 
-`qa/shots.mjs` renders the homepage with Playwright at seven viewports, captures screenshots and reports horizontal overflow, console errors and failed requests.
+The homepage was rendered in headless Chromium at **360, 390, 430, 768, 1024, 1280 and 1440 px** with Playwright. Each run verified:
 
-```bash
-npm i playwright --no-save
-npx playwright install chromium
-node qa/shots.mjs   # writes to qa/shots
-```
+- no horizontal overflow (`scrollWidth === clientWidth` at every viewport)
+- no console errors, page errors or failed network requests
+- every image, stylesheet and script resolves over HTTP
+- the mobile drawer, services dropdown and FAQ accordion open/close with correct ARIA state
+- every in-page anchor resolves to a real target
+
+Visual review was done from full-page and per-section screenshots at each breakpoint.
 
 ---
 
