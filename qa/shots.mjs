@@ -67,6 +67,17 @@ for (const vp of viewports) {
   await page.screenshot({ path: path.join(outDir, `${vp.name}-viewport.png`) });
   await page.screenshot({ path: path.join(outDir, `${vp.name}-full.png`), fullPage: true });
 
+  // section close-ups (real scroll positions, so sticky elements behave normally)
+  for (const id of ['services', 'reviews', 'faq', 'contact']) {
+    const el = await page.$('#' + id);
+    if (!el) continue;
+    await el.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(450);
+    await page.screenshot({ path: path.join(outDir, `${vp.name}-${id}.png`) });
+  }
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(300);
+
   // mobile menu open state
   if (vp.width < 1200) {
     await page.click('#menuToggle');
