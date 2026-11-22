@@ -458,7 +458,7 @@ figure { margin: 0; }
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
-  padding: 11px 2px;
+  padding: 9px 2px;
   border-bottom: 1px solid var(--line);
   font-family: var(--display);
   font-size: clamp(1.5rem, 7.4vw, 1.95rem);
@@ -498,7 +498,7 @@ figure { margin: 0; }
 
 .hero-copy { padding-bottom: 4px; }
 .hero-title {
-  font-size: clamp(2.55rem, 10.6vw, 5.4rem);
+  font-size: clamp(2.28rem, 10.05vw, 5.4rem);
   line-height: 0.94;
   letter-spacing: -0.028em;
   margin-bottom: clamp(16px, 2.4vw, 24px);

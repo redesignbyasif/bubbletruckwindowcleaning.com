@@ -68,7 +68,7 @@ for (const vp of viewports) {
   await page.screenshot({ path: path.join(outDir, `${vp.name}-full.png`), fullPage: true });
 
   // section close-ups (real scroll positions, so sticky elements behave normally)
-  for (const id of ['services', 'reviews', 'faq', 'contact']) {
+  for (const id of ['standard', 'services', 'difference', 'reviews', 'faq', 'contact']) {
     const el = await page.$('#' + id);
     if (!el) continue;
     await el.scrollIntoViewIfNeeded();
