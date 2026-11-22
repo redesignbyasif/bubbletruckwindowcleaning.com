@@ -849,10 +849,11 @@ figure { margin: 0; }
   padding-left: 14px;
   max-width: 44ch;
 }
+.difference-photo { position: relative; }
 .difference-badge {
   position: absolute;
-  right: 12px;
-  bottom: -1px;
+  right: 10px;
+  bottom: 10px;
   display: flex;
   align-items: center;
   gap: 10px;
