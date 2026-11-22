@@ -37,6 +37,16 @@ for (const vp of viewports) {
   page.on('requestfailed', (req) => log.push(`[${vp.name}] failed request: ${req.url()} (${req.failure()?.errorText})`));
 
   await page.goto(url, { waitUntil: 'networkidle' });
+  // scroll through once so lazy images decode before the full-page capture
+  await page.evaluate(async () => {
+    const step = window.innerHeight * 0.8;
+    for (let y = 0; y < document.body.scrollHeight; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((r) => setTimeout(r, 90));
+    }
+    window.scrollTo(0, 0);
+    await new Promise((r) => setTimeout(r, 250));
+  });
   await page.waitForTimeout(1200);
 
   // horizontal overflow check
